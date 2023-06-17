@@ -19,8 +19,9 @@ namespace Piccolo
 
     void PiccoloEngine::startEngine(const std::string& config_file_path)
     {
+        //反射系统
         Reflection::TypeMetaRegister::metaRegister();
-
+        //启动g_context下的各项系统
         g_runtime_global_context.startSystems(config_file_path);
 
         LOG_INFO("engine start");
